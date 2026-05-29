@@ -1,0 +1,13 @@
+/* Debugging helper styles and visual indicators */
+.debugMessage {
+  color: #003366;
+  background-color: rgba(0, 119, 204, 0.08);
+  border-left: 4px solid #0077cc;
+  padding: 12px;
+  margin-top: 16px;
+}
+
+/* Ensure external styles are loaded by checking the Network panel */
+body.debug-ready {
+  outline: 2px dashed #0077cc;
+}

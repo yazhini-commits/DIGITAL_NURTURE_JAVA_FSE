@@ -1,0 +1,21 @@
+/* Box model styling for cards and form fields */
+.eventCard {
+  margin: 18px 0;
+  padding: 18px;
+  border: 2px solid #c5d7eb;
+  border-radius: 12px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid rgba(0, 119, 204, 0.5);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hidden-display {
+  display: none;
+}

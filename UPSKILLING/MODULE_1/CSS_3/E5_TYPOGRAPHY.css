@@ -1,0 +1,32 @@
+/* Import Google font for headings */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap");
+
+/* Typography for body text */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1f324b;
+}
+
+/* Typography for headings */
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* Special styling for event descriptions */
+.description {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+}
+
+/* Smaller tagline text */
+.tagline {
+  font-size: 0.95rem;
+  color: #475a7a;
+}

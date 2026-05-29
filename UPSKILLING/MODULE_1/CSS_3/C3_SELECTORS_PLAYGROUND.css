@@ -1,0 +1,33 @@
+/* Reset margin and padding across all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style all secondary headings */
+h2 {
+  color: #004a80;
+  margin-bottom: 12px;
+}
+
+/* Banner header style using ID selector */
+#mainHeader {
+  background-color: rgba(0, 119, 204, 0.15);
+  padding: 18px;
+}
+
+/* Event card styling using class selector */
+.eventCard {
+  border: 1px solid #c5d7eb;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+  background-color: white;
+}
+
+/* Grouped styling for headings and paragraphs */
+h3,
+p {
+  line-height: 1.6;
+}

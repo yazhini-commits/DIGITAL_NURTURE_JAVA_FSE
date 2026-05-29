@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Sass Customization</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <h1>Bootstrap Sass Customization</h1>
+      <p class="lead">
+        This page describes how to customize Bootstrap with Sass.
+      </p>
+      <p>
+        Exercise 19.1: Use npm to install Bootstrap and Sass, then compile from
+        the source files.
+      </p>
+      <p>
+        Exercise 19.2: Customize <code>_variables.scss</code> to change
+        <code>$primary</code> and <code>$border-radius</code>, then rebuild
+        Bootstrap.
+      </p>
+      <pre class="bg-white p-3 rounded">
+// Example Sass overrides
+$primary: #0056b3;
+$border-radius: 1.25rem;
+@import "bootstrap/scss/bootstrap";
+</pre
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+/* Multi-column layout for community bulletin content */
+.newsArticle {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.newsArticle h2 {
+  break-inside: avoid;
+}

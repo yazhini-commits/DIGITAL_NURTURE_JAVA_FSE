@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Event Portal - Preferences Storage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f7fbff;
+      }
+      button {
+        margin-top: 16px;
+        padding: 10px 16px;
+        border: none;
+        background-color: #0077cc;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #005fa3;
+      }
+      .info {
+        margin-top: 12px;
+        font-weight: bold;
+        color: #004d80;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Save User Preferences</h1>
+    <label for="preferredEvent">Preferred event type</label>
+    <select id="preferredEvent">
+      <option value="">Select preferred event</option>
+      <option value="festival">Festival</option>
+      <option value="workshop">Workshop</option>
+      <option value="market">Market</option>
+    </select>
+
+    <button type="button" onclick="savePreferences()">Save Preferences</button>
+    <button type="button" onclick="clearPreferences()">
+      Clear Preferences
+    </button>
+
+    <p id="status" class="info"></p>
+
+    <script>
+      const select = document.getElementById("preferredEvent");
+      const status = document.getElementById("status");
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const saved = localStorage.getItem("preferredEvent");
+        if (saved) {
+          select.value = saved;
+          status.textContent = `Loaded saved preference: ${saved}`;
+        }
+      });
+
+      function savePreferences() {
+        const value = select.value;
+        if (value) {
+          localStorage.setItem("preferredEvent", value);
+          sessionStorage.setItem("preferredEvent", value);
+          status.textContent = `Preferences saved: ${value}`;
+        } else {
+          status.textContent = "Please select a preferred event type first.";
+        }
+      }
+
+      function clearPreferences() {
+        localStorage.removeItem("preferredEvent");
+        sessionStorage.removeItem("preferredEvent");
+        select.value = "";
+        status.textContent =
+          "Preferences cleared from localStorage and sessionStorage.";
+      }
+    </script>
+  </body>
+</html>

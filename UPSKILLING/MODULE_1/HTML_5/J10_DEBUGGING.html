@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Event Portal - Debugging</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f4f7fb;
+      }
+      code {
+        display: block;
+        background: #e8eef7;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Debugging with Chrome DevTools</h1>
+    <p>
+      Open the Console tab to view messages and use breakpoints in the
+      JavaScript below.
+    </p>
+    <button id="debugButton">Click for a log message</button>
+    <div id="logOutput"></div>
+
+    <script>
+      const button = document.getElementById("debugButton");
+      button.addEventListener("click", () => {
+        const message =
+          "Debugging event triggered at " + new Date().toLocaleTimeString();
+        console.log(message);
+        document.getElementById("logOutput").textContent = message;
+      });
+
+      console.log(
+        "This page is ready. Use DevTools to inspect variables and breakpoints.",
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Event Portal - Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f3f7fb;
+      }
+
+      form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-top: 12px;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        margin-top: 6px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 18px;
+        background-color: #0077cc;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #005fa3;
+      }
+
+      output {
+        display: block;
+        margin-top: 20px;
+        font-weight: bold;
+        color: #004d80;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Event Registration</h1>
+      <form id="registrationForm">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          required
+          autofocus
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email address"
+          required
+        />
+
+        <label for="eventDate">Event Date</label>
+        <input type="date" id="eventDate" name="eventDate" required />
+
+        <label for="eventType">Event Type</label>
+        <select id="eventType" name="eventType" required>
+          <option value="">Select an event</option>
+          <option value="festival">Festival</option>
+          <option value="workshop">Workshop</option>
+          <option value="market">Market</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Tell us what you'd like to attend"
+        ></textarea>
+
+        <button type="submit">Register</button>
+        <output id="confirmation" name="confirmation"></output>
+      </form>
+    </main>
+
+    <script>
+      const form = document.getElementById("registrationForm");
+      const confirmation = document.getElementById("confirmation");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const eventType = document.getElementById("eventType").value;
+        confirmation.value = `Thank you, ${name}! Your registration for the ${eventType} event has been received.`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Event Portal - Geolocation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      button {
+        padding: 10px 14px;
+        border: none;
+        background-color: #0077cc;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #005fa3;
+      }
+      .info {
+        margin-top: 16px;
+        font-weight: bold;
+        color: #003366;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Find Nearby Events</h1>
+    <button type="button" onclick="findNearbyEvents()">
+      Find Nearby Events
+    </button>
+    <p id="locationResult" class="info"></p>
+
+    <script>
+      function findNearbyEvents() {
+        const result = document.getElementById("locationResult");
+        if (!navigator.geolocation) {
+          result.textContent = "Geolocation is not supported by your browser.";
+          return;
+        }
+
+        const options = {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
+        };
+
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            result.textContent = `Coordinates: ${latitude.toFixed(6)}, ${longitude.toFixed(6)}.`;
+          },
+          (error) => {
+            if (error.code === error.PERMISSION_DENIED) {
+              result.textContent =
+                "Permission denied. Enable location to find nearby events.";
+            } else if (error.code === error.TIMEOUT) {
+              result.textContent = "Location request timed out. Try again.";
+            } else {
+              result.textContent = `Location error: ${error.message}`;
+            }
+          },
+          options,
+        );
+      }
+    </script>
+  </body>
+</html>

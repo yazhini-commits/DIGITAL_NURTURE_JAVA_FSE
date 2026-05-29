@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap 5 Setup</title>
+    <!-- Exercise 1.1: Bootstrap 5 via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #eef5ff;
+      }
+      .local-sample {
+        padding: 1rem;
+        border: 1px dashed #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="text-danger">Bootstrap CDN Setup</h1>
+      <p class="lead">
+        This page links Bootstrap through CDN and uses embedded CSS.
+      </p>
+      <div class="local-sample">
+        <!-- Exercise 1.2: Use downloaded Bootstrap files locally when available -->
+        <p>
+          Sample local stylesheet reference (replace with downloaded files):
+        </p>
+        <code>bootstrap/css/bootstrap.min.css</code>
+      </div>
+      <button class="btn btn-primary mt-3">Bootstrap Button</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

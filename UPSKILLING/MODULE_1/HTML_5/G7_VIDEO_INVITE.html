@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Event Portal - Video Invite</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #eef5fb;
+      }
+      .message {
+        margin-top: 12px;
+        font-weight: bold;
+        color: #003366;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Promo Video</h1>
+    <video id="promoVideo" width="640" controls oncanplay="showReadyMessage()">
+      <source
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+    <p id="videoStatus" class="message">Waiting for video readiness...</p>
+
+    <script>
+      const formIsDirty = true;
+
+      function showReadyMessage() {
+        document.getElementById("videoStatus").textContent =
+          "Video ready to play.";
+        console.log("Video can play now.");
+      }
+
+      window.addEventListener("beforeunload", function (event) {
+        if (formIsDirty) {
+          event.preventDefault();
+          event.returnValue =
+            "You have unsaved changes. Are you sure you want to leave?";
+        }
+      });
+    </script>
+  </body>
+</html>

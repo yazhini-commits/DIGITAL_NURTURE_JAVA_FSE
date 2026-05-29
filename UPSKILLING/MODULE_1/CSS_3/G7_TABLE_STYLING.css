@@ -1,0 +1,21 @@
+/* Table styling for event admin data */
+table.eventTable {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+table.eventTable th,
+table.eventTable td {
+  border: 1px solid #b8c9de;
+  padding: 12px;
+}
+
+table.eventTable th {
+  background-color: #0077cc;
+  color: white;
+}
+
+table.eventTable tr:nth-child(even) {
+  background-color: rgba(0, 119, 204, 0.08);
+}

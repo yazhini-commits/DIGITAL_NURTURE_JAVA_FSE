@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Event Portal - Event Feedback</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      img {
+        max-width: 220px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        border: 3px solid #0077cc;
+        border-radius: 8px;
+      }
+      img.enlarged {
+        transform: scale(1.4);
+      }
+      .info {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #004d80;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Feedback Interaction</h1>
+    <form id="feedbackForm">
+      <label for="phone">Phone Number (required)</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        placeholder="123-456-7890"
+        required
+        onblur="validatePhone()"
+      />
+      <div id="phoneFeedback" style="color: red; margin-top: 4px"></div>
+
+      <label for="eventSelect">Choose an event</label>
+      <select id="eventSelect" onchange="showFee()" required>
+        <option value="">Select one</option>
+        <option value="festival">Festival</option>
+        <option value="workshop">Workshop</option>
+        <option value="market">Market</option>
+      </select>
+      <p id="feeInfo" class="info">Event fee will appear here.</p>
+
+      <label for="comments">Feedback</label>
+      <textarea
+        id="comments"
+        rows="5"
+        placeholder="Add your feedback"
+        onkeyup="countChars()"
+      ></textarea>
+      <p id="charCount">Characters typed: 0</p>
+
+      <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+      <p id="submitResult" class="info"></p>
+    </form>
+
+    <h2>Double-click to enlarge the image</h2>
+    <img
+      id="eventImage"
+      src="https://via.placeholder.com/220x140?text=Community+Day"
+      alt="Community event"
+      title="Double-click to enlarge"
+      ondblclick="toggleImageSize()"
+    />
+
+    <script>
+      function validatePhone() {
+        const phoneInput = document.getElementById("phone");
+        const feedback = document.getElementById("phoneFeedback");
+        const pattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+        feedback.textContent = pattern.test(phoneInput.value)
+          ? ""
+          : "Please use the format 123-456-7890.";
+      }
+
+      function showFee() {
+        const select = document.getElementById("eventSelect");
+        const feeInfo = document.getElementById("feeInfo");
+        const fees = { festival: "$10", workshop: "$20", market: "Free" };
+        feeInfo.textContent = select.value
+          ? `Selected event fee: ${fees[select.value]}`
+          : "Event fee will appear here.";
+      }
+
+      function submitFeedback() {
+        document.getElementById("submitResult").textContent =
+          "Feedback submitted successfully. Thank you!";
+      }
+
+      function toggleImageSize() {
+        document.getElementById("eventImage").classList.toggle("enlarged");
+      }
+
+      function countChars() {
+        const comments = document.getElementById("comments");
+        document.getElementById("charCount").textContent =
+          `Characters typed: ${comments.value.length}`;
+      }
+    </script>
+  </body>
+</html>

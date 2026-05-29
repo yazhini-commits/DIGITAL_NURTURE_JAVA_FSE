@@ -1,0 +1,28 @@
+/* Link styling for portal navigation and content */
+a:link {
+  color: #005fa3;
+  text-decoration: none;
+}
+a:visited {
+  color: #4a6b8a;
+}
+a:hover {
+  color: #00345d;
+  text-decoration: underline;
+}
+a:active {
+  color: #001f3d;
+}
+
+/* List styling for menus and item groups */
+ul.menu,
+ul.eventList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.menu li,
+ul.eventList li {
+  margin-bottom: 10px;
+  padding: 6px 0;
+}

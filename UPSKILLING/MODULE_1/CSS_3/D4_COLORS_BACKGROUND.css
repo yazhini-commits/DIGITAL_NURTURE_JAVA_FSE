@@ -1,0 +1,26 @@
+/* Body base background and fallback color */
+body {
+  background-color: #e9f2fb;
+  background-image: url("../images/community-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1a2e4a;
+}
+
+/* Section headers with gradient backgrounds */
+.sectionHeader {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 119, 204, 0.9),
+    rgba(0, 166, 255, 0.8)
+  );
+  color: white;
+  padding: 14px 18px;
+  border-radius: 8px;
+}
+
+/* Use RGBA for a semi-transparent card background */
+.eventCard {
+  background-color: rgba(255, 255, 255, 0.92);
+}
